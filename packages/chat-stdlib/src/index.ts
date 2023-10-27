@@ -66,7 +66,7 @@ export function stringifyErrorValue(err: Error): string {
  */
 export function stringifyError(
   err: unknown,
-  errorDescription?: string,
+  errorDescription: string,
 ) {
   return `${errorDescription ?? '( no error description )'}\n${
     err instanceof Error
