@@ -6,12 +6,17 @@
   "scripts": {
     "build": "yarn tsc",
     "lint": "yarn eslint src --ext js,ts",
-    "test": "yarn jest"
+    "test": "yarn jest",
+    "api-report": "api-extractor run",
+    "api-docs": "api-documenter markdown -i temp -o docs",
+    "build-with-docs": "yarn build && yarn api-report && yarn api-docs"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-typescript": "^7.23.2",
+    "@microsoft/api-documenter": "^7.23.9",
+    "@microsoft/api-extractor": "^7.38.0",
     "@types/jest": "^29.5.6",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
