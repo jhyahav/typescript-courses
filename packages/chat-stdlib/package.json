@@ -7,7 +7,7 @@
     "build": "yarn tsc",
     "watch-build": "yarn tsc --watch --preserveWatchOutput",
     "watch-tests": "yarn jest --watch",
-    "watch": "yarn concurrently 'yarn watch-build' 'yarn watch-tests'",
+    "watch": "yarn concurrently --names 'TS,JEST' -c 'blue,red' 'yarn watch-build' 'yarn watch-tests'",
     "lint": "yarn eslint src --ext js,ts",
     "test": "yarn build && yarn jest",
     "api-report": "api-extractor run",
