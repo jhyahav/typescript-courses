@@ -5,8 +5,11 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn tsc",
+    "watch-build": "yarn tsc --watch --preserveWatchOutput",
+    "watch-tests": "yarn jest --watch",
+    "watch": "yarn concurrently 'yarn watch-build' 'yarn watch-tests'",
     "lint": "yarn eslint src --ext js,ts",
-    "test": "yarn jest",
+    "test": "yarn build && yarn jest",
     "api-report": "api-extractor run",
     "api-docs": "api-documenter markdown -i temp -o docs",
     "build-with-docs": "yarn build && yarn api-report && yarn api-docs"
@@ -20,6 +23,7 @@
     "@types/jest": "^29.5.6",
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8.52.0",
     "jest": "^29.7.0",
     "typescript": "5.3.0-beta"
