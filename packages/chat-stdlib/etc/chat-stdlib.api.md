@@ -6,13 +6,16 @@
 
 // @public
 export class Deferred<T> {
-    constructor();
-    get promise(): Promise<T>;
-    get reject(): (reason?: any) => void;
-    get resolve(): (value: T | PromiseLike<T>) => void;
+    constructor()
+    get promise(): Promise<T>
+    get reject(): (reason?: any) => void
+    get resolve(): (value: T | PromiseLike<T>) => void
 }
 
-// @beta
-export function stringifyError(err: unknown, errorDescription: string): string;
+// @public
+export function stringifyError(
+err: unknown,
+errorDescription: string,
+): string
 
 ```
