@@ -1,9 +1,12 @@
 import * as React from 'react'
 
 /**
- * @type {React.FC<React.PropsWithChildren<any>>} param0
+ * @type param0
  */
-const Loading = ({ message = 'Loading...', children }) => (
+const Loading: React.FC<React.PropsWithChildren<any>> = ({
+  message = 'Loading...',
+  children,
+}) => (
   <h1>
     {message}...
     {children}
